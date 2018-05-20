@@ -93,13 +93,15 @@
 (defn input-field [key input-atom & {:keys [class-name style on-change on-blur label
                                             required error-text  type placeholder
                                             helper-text rows multiline margin disabled
-                                            start-adornment end-adornment]
+                                            start-adornment end-adornment shrink
+                                            time-step]
                                      :or {rows "3"
-                                          margin "normal"}}]
+                                          margin "normal"
+                                          time-step "300"}}]
   
   [ui/form-control {:class-name class-name :style style :error (if error-text true false)
                     :margin margin :disabled disabled :required required}
-   [ui/input-label {:html-for (name key)} label]
+   [ui/input-label {:html-for (name key) :shrink shrink} label]
    [ui/input {:value (key @input-atom)
               :on-change #(do
                             (swap! input-atom assoc key (.. % -target -value))
@@ -120,7 +122,8 @@
                                 #js {:position "end"} (if (string? end-adornment)
                                                         end-adornment
                                                         (r/as-element end-adornment))))
-              :rows rows}]
+              :rows rows :step (when (or (= type "time")
+                                         (= type "datetime")) time-step)}]
    (when (or helper-text error-text)
      [ui/form-helper-text (if error-text error-text helper-text)])])
 

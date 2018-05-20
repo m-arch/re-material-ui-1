@@ -13,7 +13,7 @@ Then include `[re-material-ui-1.core :as ui]` like so:
 ````
 All components names uses kebab-case
 
-#Example 
+# Example 
 
 ```clojure
 (defn app-bar-example []
@@ -30,7 +30,7 @@ All components names uses kebab-case
  ```
 Also the project holds custom components:
 
-#Example with custom component
+# Example with custom component
 ```clojure
 (ns reagent-material-ui-1.examples.text-field
   (:require [reagent.core :as r]

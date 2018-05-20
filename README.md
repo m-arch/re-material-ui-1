@@ -6,7 +6,7 @@ Usage of [material-ui-1](https://material-ui.com/) components with reagent.
 # Usage
  Add `[re-material-ui-1 "0.1.0-SNAPSHOT"]`to project.clj.
 
-Then include [re-material-ui-1.core :as ui] like so:
+Then include `[re-material-ui-1.core :as ui]` like so:
 ```clojure
 (ns reagent-material-ui-example.core
     (:require [re-material-ui-1.core :as ui]))

@@ -101,7 +101,9 @@
   
   [ui/form-control {:class-name class-name :style style :error (if error-text true false)
                     :margin margin :disabled disabled :required required}
-   [ui/input-label {:html-for (name key) :shrink shrink} label]
+   [ui/input-label (if shrink
+                     {:html-for (name key) :shrink shrink}
+                     {:html-for (name key)}) label]
    [ui/input {:value (key @input-atom)
               :on-change #(do
                             (swap! input-atom assoc key (.. % -target -value))

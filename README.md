@@ -54,4 +54,4 @@ Also the project holds custom components:
 ```
  
  For more examples check the [reagent-material-ui-1 examples project](https://github.com/m-arch/reagent-material-ui-1).
- To see some running examples in action check [this](http://109.74.201.239:3000/) 
+ To see some running examples in action check [this.](http://109.74.201.239:3000/) 
